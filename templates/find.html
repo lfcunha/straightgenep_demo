@@ -26,7 +26,7 @@
 
             {%  for key in around_me %}
 
-                <li>User {{ key.doc.gccnumber }}. Distance: {{ key.dist|round(2, 'floor') }} miles</li>
+                <li>User {{ key.user_id }}. Distance: {{ key.dist|round(2, 'floor') }} miles</li>
 
             {% endfor %}
 
