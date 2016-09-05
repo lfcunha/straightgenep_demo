@@ -1,0 +1,39 @@
+<div style="display:none" class="showhide" id="find">
+
+    <div class="row" style="height:75px; margin-bottom: 5px">
+        <form class="col s12" style="height:75px; margin-bottom: 1px">
+          <div class="row">
+            <div class="input-field col s4">
+              <input placeholder="10" id="radius" type="text" class="validate">
+              <label for="radius">Radius (in miles)</label>
+            </div>
+            <div class="input-field col s4">
+              <input placeholder="10" id="number_results" type="text" class="validate">
+              <label for="number_results">number results</label>
+            </div>
+            <div class="input-field col s4">
+               <button class="btn waves-effect waves-light" type="submit" name="action" onClick="aroundMe()">next Batch
+                <i class="material-icons right">send</i>
+              </button>
+            </div>
+          </div>
+        </form>
+    </div>
+
+    <div class="row">
+        <div class="input-field col s12" style="margin-left:5px; height:330px; width: 98%; overflow-y: auto">
+            <ul class="collection with-header" id="aroundMeResults">
+
+            {%  for key in around_me %}
+
+                <li>User {{ key.doc.gccnumber }}. Distance: {{ key.dist|round(2, 'floor') }} miles</li>
+
+            {% endfor %}
+
+            </ul>
+        </div>
+    </div>
+
+
+
+</div>

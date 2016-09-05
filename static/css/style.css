@@ -1,0 +1,33 @@
+#outer-shell {
+    border-color: #ee6e73;
+    border-width: 1px 1px 1px 1px;
+    border-style: solid;
+    padding: 0px;
+    height:500px;
+}
+
+.brand-logo {
+    margin-left: 10px;
+}
+
+#flash_messages {
+    text-align:center;
+    background-color: #00ff00;
+    color:#000066;
+}
+
+#main {
+     height: 100%;
+}
+
+.flexCentercontainer {
+   display: -webkit-flex;
+   display: flex;
+   -webkit-flex-direction: row; /* works with row or column */
+   flex-direction: row;
+   -webkit-align-items: center;
+   align-items: center;
+   -webkit-justify-content: center;
+   justify-content: center;
+    height: 100%;
+}

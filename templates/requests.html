@@ -1,0 +1,58 @@
+<div style="display:none" class="showhide" id="my-requests">
+
+    <div class="row">
+        <div class="col s12">
+          <ul class="tabs">
+            <li class="tab col s3"><a class="active" href="#MyRequests">My Requests</a></li>
+            <li class="tab col s3"><a  href="#Reply">Reply</a></li>
+          </ul>
+        </div>
+        <div id="MyRequests" class="col s12" style="margin-left: 10px; margin-right: 20px; height:375px; width: 95%; overflow-y: auto">
+
+            <ul class="collection with-header">
+                {% for key in requester %}
+                    <li>Requested Compatibility Match With: {{ key.requestee_username }}<br/>
+                    {% if key.compatible %}
+                        Status: Compatible
+                    {%  elif  key.authorization.status == 1 %}
+                        Status: Incompatible
+                    {%  elif  key.authorization.status == 0%}
+                        Status: Rejected
+                    {% else %}
+                        Status: {{ key.authorization.status }}
+                    {% endif %}
+                    </li>
+                {% endfor %}
+
+            </ul>
+
+        </div>
+        <div id="Reply" class="col s12">
+            <ul class="collection with-header">
+                {% for key in requestee %}
+                    <li>User {{ key.requester_username }} Requested a Compatibility Match.
+                        {% if key.authorization.status == "waiting" %}
+                            Authorize this Match? : <a class='waves-effect waves-teal btn-flat' href='#' onClick="matchRequestResponse('{{ key.id }}', {{ key.requestee_username}}, 1)">YES</a>
+                                                    <a class='waves-effect waves-teal btn-flat' href='#' onClick="matchRequestResponse('{{ key.id }}', {{ key.requestee_username}}, 0)">NO</a>
+                        {% else %}
+                            {% if key.compatible %}
+                                Status: Compatible
+                            {%  elif  key.authorization.status == 1 %}
+                                Status: Incompatible
+                            {%  elif  key.authorization.status == 0%}
+                                Status: Rejected
+                            {% else %}
+                                Status: {{ key.authorization.status }}
+                            {% endif %}
+                        {% endif %}
+                    </li>
+                {% endfor %}
+            </ul>
+         </div>
+    </div>
+
+
+
+
+
+</div>

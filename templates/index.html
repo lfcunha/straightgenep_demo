@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+
+
+{% block main %}
+
+    {{ super() }}
+    {% include './home.html' %}
+    {% include './requests.html' %}
+    {% include './new.html' %}
+    {% include './find.html' %}
+
+{% endblock %}
