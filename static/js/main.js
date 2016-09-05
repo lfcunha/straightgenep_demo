@@ -104,7 +104,7 @@ function aroundMe(){
 
 function redoAroundMeResults(data){
     $.each(data, function(k, v){
-        var elemString = "<li>User " + v.doc.gccnumber + ". Distance: "+ Math.round(v.dist*100)/100 +" miles</li>"
+        var elemString = "<li>User " + v.user_id + ". Distance: "+ Math.round(v.dist*100)/100 +" miles</li>"
         var elem = $(elemString)
         $("#aroundMeResults").append(elem)
         console.log(v)
