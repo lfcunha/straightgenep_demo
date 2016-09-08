@@ -8,8 +8,8 @@
               <label for="radius">Radius (in miles)</label>
             </div>
             <div class="input-field col s4">
-              <input placeholder="10" id="number_results" type="text" class="validate">
-              <label for="number_results">number results</label>
+              <input disabled placeholder="10" id="number_results" type="text" class="validate">
+              <label for="number_results">max number results</label>
             </div>
             <div class="input-field col s4">
                <button class="btn waves-effect waves-light" type="submit" name="action" onClick="aroundMe()">next Batch
@@ -26,7 +26,7 @@
 
             {%  for key in around_me %}
 
-                <li>User {{ key.user_id }}. Distance: {{ key.dist|round(2, 'floor') }} miles</li>
+                <li>User {{ key.user_id }}. Distance: {{ key.dist|round(2, 'floor') }} miles. Coordinates: {{ key.doc.location.coordinates[1] }}, {{ key.doc.location.coordinates[0] }}</li>
 
             {% endfor %}
 

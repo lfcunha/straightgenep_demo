@@ -31,7 +31,7 @@ def user(username=None):
         try:
             headers = {"Content-Type": "application/json"}
             url = "http://localhost:8871/match/geo/" + username
-            data = {"lat": None, "lon": None, "radius": 10, "offset": 0, "limit": 10}
+            data = {"lat": None, "lon": None, "radius": 10, "offset": 0, "limit": 50}
             around_me_req = requests.post(url, data=json.dumps(data), headers=headers)
         except Exception:
             pass
