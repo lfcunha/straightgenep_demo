@@ -7,7 +7,7 @@
 })()
 
 var api_host = "localhost" //"159.203.104.16"
-var api_ip = 8871;
+var api_ip = 8000;
 function showElem(elem){
     // Hide all elements, before showing the onde we intend to
     $.each($(".showhide"), function(k, v) { $(v).hide()})
@@ -104,7 +104,7 @@ function aroundMe(){
 
 function redoAroundMeResults(data){
     $.each(data, function(k, v){
-        var elemString = "<li>User " + v.user_id + ". Distance: "+ Math.round(v.dist*100)/100 +" miles</li>"
+        var elemString = "<li>User " + v.user_id + ". Distance: "+ Math.round(v.dist*100)/100 +" miles. Coordinates: " + v.doc.location.coordinates[1] + ", " + v.doc.location.coordinates[0] + " </li>"
         var elem = $(elemString)
         $("#aroundMeResults").append(elem)
         console.log(v)

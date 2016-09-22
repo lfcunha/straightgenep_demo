@@ -44,8 +44,6 @@ def user(username=None):
                            requestee=json.loads(comp_req)["requestee"],
                            around_me=json.loads(around_me))
 
-
-
 if __name__ == "__main__":
     httpd = simple_server.make_server('0.0.0.0', 8000, app)
     httpd.serve_forever()
