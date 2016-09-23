@@ -6,15 +6,15 @@
 
 # Deployment
 
-<h2>install requirements:</h2>
+##install requirements:
 <p>for python2:</p>
 ```
 > pip install requirements.txt
 ```
 
-<h2>Edit the configuration file config.ini with the correct endpoints</h2>
+##Edit the configuration file config.ini with the correct endpoints
 
-<h2>Run the app</h2>
+##Run the app
 ```
 > python straightgenep_demo.py
 ```
