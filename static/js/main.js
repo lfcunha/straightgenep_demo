@@ -6,8 +6,9 @@
     console.log("Starting app")
 })()
 
-var api_host = "localhost" //"159.203.104.16"
-var api_ip = 8000;
+var api_host = "54.210.162.171" // "localhost"
+var api_ip = 8871;
+
 function showElem(elem){
     // Hide all elements, before showing the onde we intend to
     $.each($(".showhide"), function(k, v) { $(v).hide()})
